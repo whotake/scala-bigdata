@@ -1,3 +1,5 @@
+package Task1
+
 import org.apache.spark.{SparkConf, SparkContext}
 
 object Rdd {
@@ -8,7 +10,7 @@ object Rdd {
     conf.setMaster("local[2]")
 
     val sc = new SparkContext(conf)
-    val text_file = sc.textFile("nums.txt")
+    val text_file = sc.textFile("data sources/task 1/nums.txt")
 
     //Task 1
     val int_data = text_file.map(x => x.split(" ").toList.map(x => x.toInt))
